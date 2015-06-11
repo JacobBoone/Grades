@@ -1,0 +1,6 @@
+c:\users\jadavidson\documents\visual studio 2013\Projects\Grades\Grades\bin\Debug\Grades.exe.config
+c:\users\jadavidson\documents\visual studio 2013\Projects\Grades\Grades\bin\Debug\Grades.exe
+c:\users\jadavidson\documents\visual studio 2013\Projects\Grades\Grades\bin\Debug\Grades.pdb
+c:\users\jadavidson\documents\visual studio 2013\Projects\Grades\Grades\obj\Debug\Grades.exe
+c:\users\jadavidson\documents\visual studio 2013\Projects\Grades\Grades\obj\Debug\Grades.pdb
+C:\Users\jadavidson\Documents\Visual Studio 2013\Projects\Grades\Grades\obj\Debug\Grades.csprojResolveAssemblyReference.cache
