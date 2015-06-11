@@ -14,9 +14,9 @@ namespace Grades {
 			book.AddGrade(75f);
 
 			GradeStatistics stats= book.ComputerStatistics();
-			Console.WriteLine(stats.AverageGrade);
-			Console.WriteLine(stats.LowestGrade);
-			Console.WriteLine(stats.HighestGrade);
+			Console.WriteLine("Average Grade is " + stats.AverageGrade);
+			Console.WriteLine("Lowest Grade is " + stats.LowestGrade);
+			Console.WriteLine("Highest Grade is " + stats.HighestGrade);
 			
 			
 
