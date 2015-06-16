@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,26 +25,14 @@ namespace Grades {
 
 		static void Main(string[] args)
 		{
-			string name1 = "Jacob";
-			string name2 = "jacob";
+			Immutable();
 
-			bool areEqual = name1.Equals(name2, StringComparison.CurrentCultureIgnoreCase);
-			Console.WriteLine(areEqual);
-
-			Gradebook g1 = new Gradebook();
-			Gradebook g2 = g1;
-
-			GiveBookAName(ref g2);
-			Console.WriteLine(g2.Name);
+			//PassByValueAndRef();
 
 			//g1 = new Gradebook();
 			//g1.Name = "Jake's Book";
 
 			//Console.WriteLine(g2.Name);
-			DateTime d;
-			int x1 = 10;
-			IncrementNumber(out x1);
-			Console.WriteLine(x1);
 
 			//x1 = 100;
 			//Console.WriteLine(x2);
@@ -62,6 +51,31 @@ namespace Grades {
 
 
 
+		}
+
+		private static void Immutable()
+		{
+			string name = " Jacob ";
+			name = name.Trim();
+
+			DateTime date =  new DateTime(2014, 1, 1);
+			date = date.AddHours(25);
+
+			Console.WriteLine(name);
+			Console.WriteLine(date);
+		}
+
+		private static void PassByValueAndRef()
+		{
+			Gradebook g1 = new Gradebook();
+			Gradebook g2 = g1;
+
+			GiveBookAName(ref g2);
+			Console.WriteLine(g2.Name);
+
+			int x1 = 10;
+			IncrementNumber(out x1);
+			Console.WriteLine(x1);
 		}
 	}
 }
