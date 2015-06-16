@@ -6,18 +6,41 @@ using System.Threading.Tasks;
 
 namespace Grades {
 	class Program {
+
+		static void GiveBookAName(ref Gradebook book)
+		{
+			book = new Gradebook();
+			book.Name = "The Gradebook";
+		}
+	
+
+		static void IncrementNumber(out int number)
+		{
+			number = 42;
+			//Console.WriteLine(number + " test");
+		}
+
+
 		static void Main(string[] args)
 		{
 
 			Gradebook g1 = new Gradebook();
 			Gradebook g2 = g1;
 
-			g1 = new Gradebook();
-			g1.Name = "Jake's Book";
-
+			GiveBookAName(ref g2);
 			Console.WriteLine(g2.Name);
 
+			//g1 = new Gradebook();
+			//g1.Name = "Jake's Book";
 
+			//Console.WriteLine(g2.Name);
+
+			int x1 = 10;
+			IncrementNumber(out x1);
+			Console.WriteLine(x1);
+
+			//x1 = 100;
+			//Console.WriteLine(x2);
 
 
 
