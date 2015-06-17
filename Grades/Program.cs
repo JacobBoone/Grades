@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Speech.Synthesis;
 
 namespace Grades {
 	class Program {
@@ -25,6 +26,8 @@ namespace Grades {
 
 		static void Main(string[] args)
 		{
+			SpeechSynthesizer synth = new SpeechSynthesizer();
+			synth.Speak("Hello, World");
 
 			Arrays();
 
