@@ -25,7 +25,10 @@ namespace Grades {
 
 		static void Main(string[] args)
 		{
-			Immutable();
+
+			Arrays();
+
+			//Immutable();
 
 			//PassByValueAndRef();
 
@@ -51,6 +54,31 @@ namespace Grades {
 
 
 
+		}
+
+		private static void Arrays()
+		{
+			float[] grades;
+
+			grades = new float[3];
+
+			AddGrades(grades);
+
+			foreach (float grade in grades)
+			{
+				Console.WriteLine(grade);
+			}
+			
+		}
+
+		private static void AddGrades(float[] grades) {
+			if (grades.Length >= 3)
+			{
+				grades[0] = 91f;
+				grades[1] = 89.1f;
+				grades[2] = 75f;
+			}
+			
 		}
 
 		private static void Immutable()
