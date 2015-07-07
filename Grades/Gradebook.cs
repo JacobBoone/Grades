@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Grades {
-	class Gradebook {
+	public class Gradebook {
 
 		public Gradebook()
 		{
@@ -21,7 +21,7 @@ namespace Grades {
 			
 		}
 		
-		public GradeStatistics ComputerStatistics() {
+		public GradeStatistics ComputeStatistics() {
 
 			GradeStatistics stats = new GradeStatistics();
 			
