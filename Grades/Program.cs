@@ -6,30 +6,49 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Speech.Synthesis;
 
-namespace Grades {
-	class Program {
+namespace Grades 
+{
+	class Program 
+	{
 
-		static void GiveBookAName(ref Gradebook book)
-		{
-			book = new Gradebook();
-			book.Name = "The Gradebook";
-		}
+		//static void GiveBookAName(ref Gradebook book)
+		//{
+		//	book = new Gradebook();
+		//	book.Name = "The Gradebook";
+		//}
 	
 
-		static void IncrementNumber(out int number)
-		{
-			number = 42;
-			//Console.WriteLine(number + " test");
-		}
-
-
+		//static void IncrementNumber(out int number)
+		//{
+		//	number = 42;
+		//	//Console.WriteLine(number + " test");
+		//}
 
 		static void Main(string[] args)
 		{
-			SpeechSynthesizer synth = new SpeechSynthesizer();
-			synth.Speak("Hello, World");
 
-			Arrays();
+			Gradebook book = new Gradebook();
+			book.AddGrade(91f);
+			book.AddGrade(89.1f);
+			book.AddGrade(75f);
+
+			GradeStatistics stats = book.ComputeStatistics();
+
+			WriteNames("Scott", "Jacob", "John");
+
+			int number = 20;
+			WriteBytes(number);
+			WriteBytes(stats.AverageGrade);
+
+			Console.WriteLine("Average Grade is " + stats.AverageGrade);
+			Console.WriteLine("Lowest Grade is " + stats.LowestGrade);
+			Console.WriteLine("Highest Grade is " + stats.HighestGrade);
+
+
+			//SpeechSynthesizer synth = new SpeechSynthesizer();
+			//synth.Speak("Hello, World");
+
+			//Arrays();
 
 			//Immutable();
 
@@ -42,71 +61,84 @@ namespace Grades {
 
 			//x1 = 100;
 			//Console.WriteLine(x2);
-
-
-
-			//Gradebook book = new Gradebook();
-			//book.AddGrade(91f);
-			//book.AddGrade(89.1f);
-			//book.AddGrade(75f);
-
-			//GradeStatistics stats= book.ComputerStatistics();
-			//Console.WriteLine("Average Grade is " + stats.AverageGrade);
-			//Console.WriteLine("Lowest Grade is " + stats.LowestGrade);
-			//Console.WriteLine("Highest Grade is " + stats.HighestGrade);
-
-
-
+		}
+		private static void WriteBytes(int value)
+		{
+			byte[] bytes = BitConverter.GetBytes(value);
+			WriteByteArray(bytes);
 		}
 
-		private static void Arrays()
+		private static void WriteBytes(float value) 
 		{
-			float[] grades;
+			byte[] bytes = BitConverter.GetBytes(value);
+			WriteByteArray(bytes);
+		}
 
-			grades = new float[3];
-
-			AddGrades(grades);
-
-			foreach (float grade in grades)
+		private static void WriteByteArray(byte[] bytes) 
+		{
+			foreach (byte b in bytes) 
 			{
-				Console.WriteLine(grade);
+				Console.Write(" 0x{0:X}", b);
 			}
-			
+			Console.WriteLine();
 		}
-
-		private static void AddGrades(float[] grades) {
-			if (grades.Length >= 3)
-			{
-				grades[0] = 91f;
-				grades[1] = 89.1f;
-				grades[2] = 75f;
+		private static void WriteNames(params string[] names) 
+		{
+			foreach (string name in names) {
+				Console.WriteLine(name);
 			}
+		}
+
+
+
+	//	private static void Arrays()
+	//	{
+	//		float[] grades;
+
+	//		grades = new float[3];
+
+	//		AddGrades(grades);
+
+	//		foreach (float grade in grades)
+	//		{
+	//			Console.WriteLine(grade);
+	//		}
 			
-		}
+	//	}
 
-		private static void Immutable()
-		{
-			string name = " Jacob ";
-			name = name.Trim();
+	//	private static void AddGrades(float[] grades) {
+	//		if (grades.Length >= 3)
+	//		{
+	//			grades[0] = 91f;
+	//			grades[1] = 89.1f;
+	//			grades[2] = 75f;
+	//		}
+			
+	//	}
 
-			DateTime date =  new DateTime(2014, 1, 1);
-			date = date.AddHours(25);
+	//	private static void Immutable()
+	//	{
+	//		string name = " Jacob ";
+	//		name = name.Trim();
 
-			Console.WriteLine(name);
-			Console.WriteLine(date);
-		}
+	//		DateTime date =  new DateTime(2014, 1, 1);
+	//		date = date.AddHours(25);
 
-		private static void PassByValueAndRef()
-		{
-			Gradebook g1 = new Gradebook();
-			Gradebook g2 = g1;
+	//		Console.WriteLine(name);
+	//		Console.WriteLine(date);
+	//	}
 
-			GiveBookAName(ref g2);
-			Console.WriteLine(g2.Name);
+	//	private static void PassByValueAndRef()
+	//	{
+	//		Gradebook g1 = new Gradebook();
+	//		Gradebook g2 = g1;
 
-			int x1 = 10;
-			IncrementNumber(out x1);
-			Console.WriteLine(x1);
-		}
+	//		GiveBookAName(ref g2);
+	//		Console.WriteLine(g2.Name);
+
+	//		int x1 = 10;
+	//		IncrementNumber(out x1);
+	//		Console.WriteLine(x1);
+	//	}
 	}
 }

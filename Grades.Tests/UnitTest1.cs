@@ -18,19 +18,17 @@ namespace Grades.Tests {
 			Assert.AreEqual(90f, stats.HighestGrade);
 		}
 
-		//[TestMethod]
-		//public void PassByValue()
-		//{
-		//	Gradebook book = new Gradebook();
-		//	book.Name = "Not set";
-		//	SetName(book);
+		[TestMethod]
+		public void PassByValue() {
+			Gradebook book = new Gradebook();
+			book.Name = "Not set";
+			SetName(book);
 
-		//	Assert.AreEqual("",book.Name);
-		//}
+			Assert.AreEqual("Name set", book.Name);
+		}
 
-		//void SetName(Gradebook book)
-		//{
-		//	book.Name = "Name set";
-		//}
+		void SetName(Gradebook book) {
+			book.Name = "Name set";
+		}
 	}
 }
