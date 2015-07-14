@@ -7,11 +7,20 @@ using System.Threading.Tasks;
 namespace Grades {
 	public class Gradebook {
 
-		public Gradebook()
+		//public Gradebook()
+		//	:this("No Name")
+		//{
+			
+		//}
+
+		public Gradebook(string name = "There is no name")
 		{
-			grades = new List<float>();	
+			Name = name;
+			grades = new List<float>();
 		}
-		
+
+
+
 		public void AddGrade(float grade)
 		{
 			if (grade >= 0 && grade <= 100)
@@ -40,7 +49,13 @@ namespace Grades {
 			return stats;
 		}
 
-		public string Name;
+		private string _name;
+
+		public string Name
+		{
+			get; 
+			set;
+		}
 
 		List<float> grades;
 
