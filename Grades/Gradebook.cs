@@ -49,15 +49,35 @@ namespace Grades {
 			return stats;
 		}
 
+		//private string _name;
+
 		private string _name;
+
 
 		public string Name
 		{
-			get; 
-			set;
+			get
+			{
+				return _name;
+			}
+			set
+			{
+				if (_name != value)
+				{
+					var oldValue = _name;
+					_name = value;
+					if (NameChanged != null)
+					{
+						NameChanged(oldValue, value);
+					}
+				
+				}
+				
+			}
 		}
 
-		List<float> grades;
+		public NamedChangeDelegate NameChanged;
+		private List<float> grades;
 
 		
 	}

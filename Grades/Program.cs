@@ -35,6 +35,10 @@ namespace Grades
 			GradeStatistics stats = book.ComputeStatistics();
 
 			//book.Name = "";
+			book.NameChanged += OnNameChanged;
+			book.NameChanged += OnNameChanged;
+			book.NameChanged += OnNameChanged2;
+			book.Name = "John's Book";
 			WriteNames(book.Name);
 
 		
@@ -61,6 +65,14 @@ namespace Grades
 			//x1 = 100;
 			//Console.WriteLine(x2);
 		}
+
+		private static void OnNameChanged2(string oldValue, string newValue) {
+			Console.WriteLine("***");
+		}
+		private static void OnNameChanged(string oldValue, string newValue) {
+			Console.WriteLine("Name Changed from {0} to {1}", oldValue, newValue);
+		}
+
 		private static void WriteBytes(int value)
 		{
 			byte[] bytes = BitConverter.GetBytes(value);
