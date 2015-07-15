@@ -68,7 +68,10 @@ namespace Grades {
 					_name = value;
 					if (NameChanged != null)
 					{
-						NameChanged(oldValue, value);
+						NameChangedEventArgs args = new NameChangedEventArgs();
+						args.OldValue = oldValue;
+						args.NewValue = value;
+						NameChanged(this, args);
 					}
 				
 				}
@@ -76,7 +79,7 @@ namespace Grades {
 			}
 		}
 
-		public NamedChangeDelegate NameChanged;
+		public event NamedChangeDelegate NameChanged;
 		private List<float> grades;
 
 		

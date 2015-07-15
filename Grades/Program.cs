@@ -38,6 +38,9 @@ namespace Grades
 			book.NameChanged += OnNameChanged;
 			book.NameChanged += OnNameChanged;
 			book.NameChanged += OnNameChanged2;
+			book.NameChanged -= OnNameChanged;
+
+
 			book.Name = "John's Book";
 			WriteNames(book.Name);
 
@@ -66,12 +69,15 @@ namespace Grades
 			//Console.WriteLine(x2);
 		}
 
-		private static void OnNameChanged2(string oldValue, string newValue) {
+		private static void OnNameChanged2(object sender, NameChangedEventArgs args) {
 			Console.WriteLine("***");
 		}
-		private static void OnNameChanged(string oldValue, string newValue) {
-			Console.WriteLine("Name Changed from {0} to {1}", oldValue, newValue);
+
+		private static void OnNameChanged(object sender, NameChangedEventArgs args) {
+			Console.WriteLine("Name Changed from {0} to {1}", args.OldValue, args.NewValue);
 		}
+
+	
 
 		private static void WriteBytes(int value)
 		{
