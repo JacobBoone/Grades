@@ -34,15 +34,15 @@ namespace Grades
 
 			GradeStatistics stats = book.ComputeStatistics();
 
-			//book.Name = "";
-			book.NameChanged += OnNameChanged;
-			book.NameChanged += OnNameChanged;
-			book.NameChanged += OnNameChanged2;
-			book.NameChanged -= OnNameChanged;
+			////book.Name = "";
+			//book.NameChanged += OnNameChanged;
+			//book.NameChanged += OnNameChanged;
+			//book.NameChanged += OnNameChanged2;
+			//book.NameChanged -= OnNameChanged;
 
 
-			book.Name = "John's Book";
-			WriteNames(book.Name);
+			//book.Name = "John's Book";
+			//WriteNames(book.Name);
 
 		
 
@@ -50,7 +50,8 @@ namespace Grades
 			Console.WriteLine("Lowest Grade is " + stats.LowestGrade);
 			Console.WriteLine("Highest Grade is " + stats.HighestGrade);
 
-
+			Console.WriteLine(stats.LetterGrade);
+		
 			//SpeechSynthesizer synth = new SpeechSynthesizer();
 			//synth.Speak("Hello, World");
 
