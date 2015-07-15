@@ -50,7 +50,8 @@ namespace Grades
 			Console.WriteLine("Lowest Grade is " + stats.LowestGrade);
 			Console.WriteLine("Highest Grade is " + stats.HighestGrade);
 
-			Console.WriteLine(stats.LetterGrade);
+			Console.WriteLine("{0} {1}", stats.LetterGrade, stats.Description);
+
 		
 			//SpeechSynthesizer synth = new SpeechSynthesizer();
 			//synth.Speak("Hello, World");
