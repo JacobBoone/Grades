@@ -4,3 +4,4 @@ c:\users\jadavidson\documents\visual studio 2013\Projects\Grades\Grades\bin\Debu
 c:\users\jadavidson\documents\visual studio 2013\Projects\Grades\Grades\obj\Debug\Grades.exe
 c:\users\jadavidson\documents\visual studio 2013\Projects\Grades\Grades\obj\Debug\Grades.pdb
 C:\Users\jadavidson\Documents\Visual Studio 2013\Projects\Grades\Grades\obj\Debug\Grades.csprojResolveAssemblyReference.cache
+C:\Users\jadavidson\Documents\Visual Studio 2013\Projects\Grades\Grades\bin\Debug\grades.txt

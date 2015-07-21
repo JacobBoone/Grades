@@ -5,3 +5,4 @@ C:\Users\jadavidson\Documents\Visual Studio 2013\Projects\Grades\Grades.Tests\ob
 C:\Users\jadavidson\Documents\Visual Studio 2013\Projects\Grades\Grades.Tests\obj\Debug\Grades.Tests.pdb
 C:\Users\jadavidson\Documents\Visual Studio 2013\Projects\Grades\Grades.Tests\bin\Debug\Grades.exe
 C:\Users\jadavidson\Documents\Visual Studio 2013\Projects\Grades\Grades.Tests\bin\Debug\Grades.pdb
+C:\Users\jadavidson\Documents\Visual Studio 2013\Projects\Grades\Grades.Tests\bin\Debug\grades.txt
