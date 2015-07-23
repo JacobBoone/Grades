@@ -33,17 +33,27 @@ namespace Grades
 			//book.AddGrade(89.1f);
 			//book.AddGrade(75f);
 
+		
+
+
 			try
 			{
-				string[] lines = File.ReadAllLines("grades.txt");
-				foreach (string line in lines)
+				using (FileStream stream = File.Open("grades.txt", FileMode.Open))
+				using (StreamReader reader = new StreamReader(stream))
 				{
-					float grade = float.Parse(line);
-					book.AddGrade(grade);
+					string line = reader.ReadLine();
+					while (line != null) {
+						float grade = float.Parse(line);
+						book.AddGrade(grade);
+						line = reader.ReadLine();
+					}
 				}
+				
+
 			}
 			catch (FileNotFoundException ex)
 			{
+
 				Console.WriteLine("Could not locate the file");
 				return;
 			}
@@ -52,7 +62,18 @@ namespace Grades
 				Console.WriteLine("No Access");
 				return;
 			}
-
+			//finally
+			//{
+			//	if (reader != null)
+			//	{
+			//		reader.Close();
+			//	}
+			//	if (stream != null)
+			//	{
+			//		stream.Close();
+			//	}
+				
+			//}
 
 
 			book.WriteGrades(Console.Out);
