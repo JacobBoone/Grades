@@ -28,13 +28,7 @@ namespace Grades
 		static void Main(string[] args)
 		{
 
-			ThrowAwayGradeBook book = new ThrowAwayGradeBook("Jacob's Book");
-			//book.AddGrade(91f);
-			//book.AddGrade(89.1f);
-			//book.AddGrade(75f);
-
-		
-
+			Gradebook book = CreateGradeBook();
 
 			try
 			{
@@ -125,6 +119,12 @@ namespace Grades
 
 			//x1 = 100;
 			//Console.WriteLine(x2);
+		}
+
+		private static Gradebook CreateGradeBook()
+		{
+			Gradebook book = new ThrowAwayGradeBook("Jacob's Book");
+			return book;
 		}
 
 		private static void OnNameChanged2(object sender, NameChangedEventArgs args) {

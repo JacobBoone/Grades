@@ -33,7 +33,7 @@ namespace Grades {
 		}
 
 
-		public GradeStatistics ComputeStatistics() {
+		public virtual GradeStatistics ComputeStatistics() {
 
 			Console.WriteLine("regular computestats method in gradebook");
 			GradeStatistics stats = new GradeStatistics();

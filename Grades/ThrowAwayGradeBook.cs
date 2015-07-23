@@ -13,7 +13,7 @@ namespace Grades {
 			Console.WriteLine("throwaway ctor");
 		}
 
-		public GradeStatistics ComputeStatistics()
+		public override GradeStatistics ComputeStatistics()
 		{
 			Console.WriteLine("Throwaway computestats method");
 			float lowest = float.MaxValue;
