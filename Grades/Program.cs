@@ -28,7 +28,7 @@ namespace Grades
 		static void Main(string[] args)
 		{
 
-			Gradebook book = CreateGradeBook();
+			GradeTracker book = CreateGradeBook();
 
 			try
 			{
@@ -121,9 +121,9 @@ namespace Grades
 			//Console.WriteLine(x2);
 		}
 
-		private static Gradebook CreateGradeBook()
+		private static GradeTracker CreateGradeBook()
 		{
-			Gradebook book = new ThrowAwayGradeBook("Jacob's Book");
+			GradeTracker book = new ThrowAwayGradeBook("Jacob's Book");
 			return book;
 		}
 
