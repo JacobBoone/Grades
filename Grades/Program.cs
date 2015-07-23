@@ -28,7 +28,7 @@ namespace Grades
 		static void Main(string[] args)
 		{
 
-			Gradebook book = new Gradebook("Jacob's Book");
+			ThrowAwayGradeBook book = new ThrowAwayGradeBook("Jacob's Book");
 			//book.AddGrade(91f);
 			//book.AddGrade(89.1f);
 			//book.AddGrade(75f);
@@ -80,10 +80,10 @@ namespace Grades
 
 			try
 			{
-				Console.WriteLine("Please enter a name for the book");
-				book.Name = Console.ReadLine();
+				//Console.WriteLine("Please enter a name for the book");
+				//book.Name = Console.ReadLine();
 			}
-			catch (ArgumentException ex)
+			catch (ArgumentException)
 			{
 				Console.WriteLine("Invalid name");
 			}

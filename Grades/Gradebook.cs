@@ -16,6 +16,7 @@ namespace Grades {
 
 		public Gradebook(string name = "There is no name")
 		{
+			Console.WriteLine("gradebook ctor");
 			Name = name;
 			_grades = new List<float>();
 		}
@@ -30,9 +31,11 @@ namespace Grades {
 			}
 			
 		}
-		
+
+
 		public GradeStatistics ComputeStatistics() {
 
+			Console.WriteLine("regular computestats method in gradebook");
 			GradeStatistics stats = new GradeStatistics();
 			
 
@@ -57,8 +60,7 @@ namespace Grades {
 				textWriter.WriteLine(_grades[i]);
 			}
 			//int i = 0;
-			//while (i < _grades.Count)
-			//{
+			//while (i < _grades.Count) {
 			//	textWriter.WriteLine(_grades[i]);
 
 			//	i++;
@@ -103,9 +105,7 @@ namespace Grades {
 		}
 
 		public event NamedChangeDelegate NameChanged;
-		private List<float> _grades;
-
-
+		protected List<float> _grades;
 
 		
 	}
