@@ -13,6 +13,11 @@ namespace Grades {
 			Console.WriteLine("throwaway ctor");
 		}
 
+		public override void DoSomething()
+		{
+			
+		}
+
 		public override GradeStatistics ComputeStatistics()
 		{
 			Console.WriteLine("Throwaway computestats method");

@@ -28,7 +28,7 @@ namespace Grades
 		static void Main(string[] args)
 		{
 
-			GradeTracker book = CreateGradeBook();
+			IGradeTracker book = CreateGradeBook();
 
 			try
 			{
@@ -69,8 +69,10 @@ namespace Grades
 				
 			//}
 
-
-			book.WriteGrades(Console.Out);
+			foreach (float grade in book)
+			{
+				Console.WriteLine(grade);
+			}
 
 			try
 			{
@@ -121,9 +123,9 @@ namespace Grades
 			//Console.WriteLine(x2);
 		}
 
-		private static GradeTracker CreateGradeBook()
+		private static IGradeTracker CreateGradeBook()
 		{
-			GradeTracker book = new ThrowAwayGradeBook("Jacob's Book");
+			IGradeTracker book = new ThrowAwayGradeBook("Jacob's Book");
 			return book;
 		}
 
